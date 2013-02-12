@@ -1,9 +1,12 @@
 # Presentations
 
-A collection of personal presentations/talk I've given or intend on giving. Feel free to send
-pull requests, comments, or any kind of feedback.
+A collection of  presentations/talks that we've given or intend on giving at Amoeba. Feel free to
+send pull requests, comments, or any kind of feedback.
 
-Daniel Jabbour - [@bitgangsta](http://twitter.com/bitgangsta)
+Contributors thus far:
+
+ * Daniel Jabbour - [@bitgangsta](http://twitter.com/bitgangsta)
+ * Chris Barton - [@huTweeted](http://twitter.com/huTweeted)
 
 ## Based on Reveal.js and Middleman
 
