@@ -1,0 +1,14 @@
+<section data-markdown>
+  ## Authentication
+
+  * API tokens
+  * OAuth, third party
+   * Combine logging in through third party access tokens to sending back your own API tokens
+  * Rails session
+
+  <pre>
+    <code>
+      App.user = new User(<%%= j current_user.to_json.html_safe %>);
+    </code>
+  <pre>
+</section>

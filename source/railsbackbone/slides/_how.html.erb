@@ -1,0 +1,28 @@
+<section data-markdown>
+  ## Traditional model*
+
+  * RJS / HTML sent back from server
+   * Initial load is small, fast
+   * Server is fast, compile and do all it there
+   * Send down what each action needs to do
+  * Coupled with the JavaScript on the page
+  * Hard to test
+</section>
+
+<section data-markdown>
+  ## Newer model*
+
+  * JSON sent back from server
+   * Javascript parses and handles what needs to be done
+   * Can be reused for different parts of the application
+  * Organized JavaScript leading to happy developers
+  * Easier to test
+
+  <aside class="notes">
+    * Talk about discussion in the community about the evolution:
+     * 10kb vs 40kb doesn't make difference
+     * Slow to the "time until first ..." metric
+     * One of the best ways might be shared rendering on the server running the same MVC (full Node :()
+    * In the end a combination of the two might be the best bet, up to the project
+  </aside>
+</section>

@@ -15,3 +15,6 @@
 
 # Daniel's ignores:
 /.idea
+
+.rvmrc
+*.swp
