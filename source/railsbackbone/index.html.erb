@@ -10,7 +10,7 @@ theme: amoeba
   <%= javascript_include_tag "defaults" %>
 <% end %>
 
-<% slides = %w(title personal_intro frameworks_client) %>
+<% slides = %w(title personal_intro frameworks_client frameworks_server) %>
 
 <% slides.each do |slide| %>
   <%= content_tag(:section, partial("slides/#{slide}")) %>
