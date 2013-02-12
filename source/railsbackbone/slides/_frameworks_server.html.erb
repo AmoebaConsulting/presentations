@@ -1,12 +1,62 @@
 <section data-markdown>
 ## Server-Side Frameworks
-  * ***INSERT Controller/presenter snippet***
   * RABL
    * Rendered view based representations to fit your needs.
   * Object presenters/serializers
-   * Ruby language powered serialization to allow for an easy dsl and flexibility.
-  * Rails Api / controllers
-   * Rails Api would be its own separate application.
+   * Ruby language powered serialization to allow for an easy DSL and flexibility.
+  * Rails API / Controllers
+   * Rails API could be its own separate application.
    * If the application is bundled, just normal controllers responding to the
    supported response types.
+</section>
+
+<section >
+  <h2>Controller Presenting</h2>
+  <pre>
+    <code class="ruby">
+      class FeedController < ApplicationController
+        respond_to :json #, :xml, :plist
+
+        ...
+
+        def index
+          @posts = Feed.for(current_user)
+          presents @posts
+        end
+
+        def presents(collection, options = {})
+          presenter = presenter_class.new(self, collection)
+          respond_with presenter, options
+        end
+
+        def presenter_class
+          (self.class.name.sub('Controller', '').singularize + 'CollectionPresenter').constantize
+        end
+
+        ...
+
+      end
+    </code>
+  </pre>
+</section>
+
+<section>
+  <h2>Object Serialization</h2>
+  <pre>
+    <code class="ruby">
+      class FeedCollectionPresenter
+        def initialize(controller, posts)
+          @controller, @posts = [controller, posts]
+        end
+
+        def as_json(options = {})
+          @posts.map do |post|
+            PostPresenter.new(controller, post).as_json(options)
+          end
+
+          { next_page: @posts.next_page, posts: @posts }
+        end
+      end
+    </code>
+  </pre>
 </section>
