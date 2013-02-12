@@ -1,3 +1,9 @@
+// Fix code paddings inside pres
+.reveal pre > code {
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+
 // For the frameworks_client slide:
 .cloud {
   span {

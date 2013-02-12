@@ -10,7 +10,7 @@ theme: amoeba
   <%= javascript_include_tag "defaults" %>
 <% end %>
 
-<% slides = %w(title personal_intro why how frameworks_client frameworks_server authentication caching gotchas) %>
+<% slides = %w(title personal_intro why how frameworks_client frameworks_server structure authentication caching gotchas) %>
 
 <% slides.each do |slide| %>
   <%= content_tag(:section, partial("slides/#{slide}")) %>
