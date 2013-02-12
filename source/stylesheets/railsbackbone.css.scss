@@ -1,5 +1,4 @@
 .cloud {
-  width: 200px;
   span {
     padding-left: 60px;
     padding-right: 60px;
@@ -8,14 +7,40 @@
     font-size: 0.7em;
     font-weight: 100;
   }
+  .tag2 {
+    font-size: 0.8em;
+    font-weight: 200;
+  }
+  .tag3 {
+    font-size: 0.9em;
+    font-weight: 300;
+  }
+  .tag4 {
+    font-size: 1.0em;
+    font-weight: 400;
+  }
+  .tag5 {
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+  .tag6 {
+    font-size: 1.4em;
+    font-weight: 600;
+  }
+  .tag7 {
+    font-size: 1.6em;
+    font-weight: 700;
+  }
+  .tag8 {
+    font-size: 1.8em;
+    font-weight: 800;
+  }
+  .tag9 {
+    font-size: 2.2em;
+    font-weight: 900;
+  }
+  .tag10 {
+    font-size: 2.5em;
+    font-weight: 900;
+  }
 }
-
-#cloud span.tag2 { font-size: 0.8em; font-weight: 200; }
-#cloud span.tag3 { font-size: 0.9em; font-weight: 300; }
-#cloud span.tag4 { font-size: 1.0em; font-weight: 400; }
-#cloud span.tag5 { font-size: 1.2em; font-weight: 500; }
-#cloud span.tag6 { font-size: 1.4em; font-weight: 600; }
-#cloud span.tag7 { font-size: 1.6em; font-weight: 700; }
-#cloud span.tag8 { font-size: 1.8em; font-weight: 800; }
-#cloud span.tag9 { font-size: 2.2em; font-weight: 900; }
-#cloud span.tag10 { font-size: 2.5em; font-weight: 900; }
