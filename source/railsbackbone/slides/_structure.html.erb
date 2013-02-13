@@ -1,12 +1,12 @@
 <section data-markdown>
 ## Structuring a multifaceted Backbone / Rails application
   * Extract common models for the logic and subclass based on the part of the App being visited
-  * Keep only what you need for each side of the application, leading to the following directory structure
-   * folder/common, folder/side-1, folder/side-n
+  * Keep only what you need for each side of the application, leveraging the Asset Pipeline
   * Make separate layouts for each side, specifying the top level JS file that has its includes
 </section>
 
 <section>
+  <h2>Directory Structure</h2>
   <pre>
     <code>
 app/assets/javascripts
@@ -23,6 +23,16 @@ app/assets/javascripts
       │   │   └── base_collection.js
       │   └── user
       │       ├── feed.js
+      └── models
+              ├── admin
+              ├── common
+              │   └── user.js
+              └── user
+                  └── post.js
     </code>
   </pre>
+</section>
+
+<section>
+
 </section>
