@@ -22,7 +22,7 @@ app/assets/javascripts
       │   ├── common
       │   │   └── base_collection.js
       │   └── user
-      │       ├── feed.js
+      │       └── feed.js
       └── models
               ├── admin
               ├── common
@@ -34,5 +34,39 @@ app/assets/javascripts
 </section>
 
 <section>
+  <h2>Directives</h2>
+  <pre>
+    <code>
+//= require jquery
+//= require bootstrap
+//= require_self
+//= require_tree ./app/models/common
+//= require_tree ./app/collections/common
 
+App = {
+  Models: {},
+  Collections: {}
+};
+    </code>
+  </pre>
+  <p>app/assets/javascripts/common.js</p>
+
+  <pre>
+    <code>
+//= require common
+//= require_tree ./app/models/user
+//= require_tree ./app/collections/user
+//= require app/apps/user
+    </code>
+  </pre>
+  <p>app/assets/javascripts/user.js</p>
+
+  <pre>
+    <code>
+<%%= content_for :assets do %>
+  <%%= javascript_include_tag 'user' %>
+<%% end %>
+    </code>
+  </pre>
+  <p>app/views/layouts/user.html.erb</p>
 </section>
