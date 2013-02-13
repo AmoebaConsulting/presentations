@@ -8,12 +8,18 @@
    * Rails API could be its own separate application.
    * If the application is bundled, just normal controllers responding to the
    supported response types.
+
+  <aside class="notes">
+    Rabl is good, but the presenter/serialized pattern allows easy
+    * Testable
+    * Modular
+  </aside>
 </section>
 
 <section >
   <h2>Controller Presenting</h2>
 <pre><code class="ruby" style="max-height: 600px;">
-class FeedController < ApplicationController
+class Api::FeedController < ApiController
   respond_to :json #, :xml, :plist
 
   ...
@@ -37,7 +43,7 @@ class FeedController < ApplicationController
 
 end
 </code></pre>
-  <p class="filename">app/controllers/feed_controller.rb</p>
+  <p class="filename">app/controllers/api/feed_controller.rb</p>
 </section>
 
 <section>
