@@ -1,12 +1,12 @@
 <section data-markdown>
 ## Structuring a multifaceted Backbone / Rails application
   * Extract common models for the logic and subclass based on the part of the App being visited
-  * Keep only what you need for each side of the application, leading to the following directory structure
-   * folder/common, folder/side-1, folder/side-n
+  * Keep only what you need for each side of the application, leveraging the Asset Pipeline
   * Make separate layouts for each side, specifying the top level JS file that has its includes
 </section>
 
 <section>
+  <h2>Directory Structure</h2>
   <pre>
     <code>
 app/assets/javascripts
@@ -22,7 +22,51 @@ app/assets/javascripts
       │   ├── common
       │   │   └── base_collection.js
       │   └── user
-      │       ├── feed.js
+      │       └── feed.js
+      └── models
+              ├── admin
+              ├── common
+              │   └── user.js
+              └── user
+                  └── post.js
     </code>
   </pre>
+</section>
+
+<section>
+  <h2>Directives</h2>
+  <pre>
+    <code>
+//= require jquery
+//= require bootstrap
+//= require_self
+//= require_tree ./app/models/common
+//= require_tree ./app/collections/common
+
+App = {
+  Models: {},
+  Collections: {}
+};
+    </code>
+  </pre>
+  <p>app/assets/javascripts/common.js</p>
+
+  <pre>
+    <code>
+//= require common
+//= require_tree ./app/models/user
+//= require_tree ./app/collections/user
+//= require app/apps/user
+    </code>
+  </pre>
+  <p>app/assets/javascripts/user.js</p>
+
+  <pre>
+    <code>
+<%%= content_for :assets do %>
+  <%%= javascript_include_tag 'user' %>
+<%% end %>
+    </code>
+  </pre>
+  <p>app/views/layouts/user.html.erb</p>
 </section>
