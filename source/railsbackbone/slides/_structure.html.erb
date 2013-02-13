@@ -7,8 +7,7 @@
 
 <section>
   <h2>Directory Structure</h2>
-  <pre>
-    <code>
+<pre><code style="max-height: 1000px;">
 app/assets/javascripts
   ├── admin.js
   ├── user.js
@@ -29,14 +28,12 @@ app/assets/javascripts
               │   └── user.js
               └── user
                   └── post.js
-    </code>
-  </pre>
+</code></pre>
 </section>
 
 <section>
   <h2>Directives</h2>
-  <pre>
-    <code>
+<pre><code>
 //= require jquery
 //= require bootstrap
 //= require_self
@@ -47,26 +44,21 @@ App = {
   Models: {},
   Collections: {}
 };
-    </code>
-  </pre>
-  <p>app/assets/javascripts/common.js</p>
+</code></pre>
+  <p class="filename">app/assets/javascripts/common.js</p>
 
-  <pre>
-    <code>
+<pre><code>
 //= require common
 //= require_tree ./app/models/user
 //= require_tree ./app/collections/user
 //= require app/apps/user
-    </code>
-  </pre>
-  <p>app/assets/javascripts/user.js</p>
+</code></pre>
+  <p class="filename">app/assets/javascripts/user.js</p>
 
-  <pre>
-    <code>
+<pre><code>
 <%%= content_for :assets do %>
   <%%= javascript_include_tag 'user' %>
 <%% end %>
-    </code>
-  </pre>
-  <p>app/views/layouts/user.html.erb</p>
+</code></pre>
+  <p class="filename">app/views/layouts/user.html.erb</p>
 </section>

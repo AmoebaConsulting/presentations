@@ -966,7 +966,7 @@ var Reveal = (function(){
 
 			// Reset all slides upon navigate to home
 			// Issue: #285
-			if ( document.querySelector( HOME_SLIDE_SELECTOR ).classList.contains( 'present' ) ) {
+			if ( document.querySelector( HOME_SLIDE_SELECTOR ) && document.querySelector( HOME_SLIDE_SELECTOR ).classList.contains( 'present' ) ) {
 				// Launch async task
 				setTimeout( function () {
 					var slides = toArray( document.querySelectorAll( HORIZONTAL_SLIDES_SELECTOR + '.stack') ), i;

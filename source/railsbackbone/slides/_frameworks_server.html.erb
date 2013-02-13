@@ -12,8 +12,7 @@
 
 <section >
   <h2>Controller Presenting</h2>
-  <pre>
-    <code class="ruby">
+<pre><code class="ruby" style="max-height: 600px;">
 class FeedController < ApplicationController
   respond_to :json #, :xml, :plist
 
@@ -30,21 +29,20 @@ class FeedController < ApplicationController
   end
 
   def presenter_class
-    (self.class.name.sub('Controller', '').singularize + 'CollectionPresenter').constantize
+    name = (self.class.name.sub('Controller', '').singularize
+    "#{name}CollectionPresenter".constantize
   end
 
   ...
 
 end
-    </code>
-  </pre>
-  <p>app/controllers/feed_controller.rb</p>
+</code></pre>
+  <p class="filename">app/controllers/feed_controller.rb</p>
 </section>
 
 <section>
   <h2>Object Serialization</h2>
-  <pre>
-    <code class="ruby">
+<pre><code class="ruby">
 class FeedCollectionPresenter
   def initialize(controller, posts)
     @controller, @posts = [controller, posts]
@@ -58,7 +56,6 @@ class FeedCollectionPresenter
     { next_page: @posts.next_page, posts: @posts }
   end
 end
-    </code>
-  </pre>
-  <p>app/presenters/feed_collection_presenter.rb</p>
+</code></pre>
+  <p class="filename">app/presenters/feed_collection_presenter.rb</p>
 </section>

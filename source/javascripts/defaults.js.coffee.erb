@@ -11,34 +11,34 @@ Reveal.initialize
 
   # Optional libraries used to extend on reveal.js
   dependencies: [
-    src: "<%= asset_path(:js, "reveal/lib/classList.js") %>"
+    src: "<%= asset_path(:js, "reveal/lib/classList") %>"
     condition: ->
       not document.body.classList
   ,
-    src: "<%= asset_path(:js, "reveal/plugins/markdown/showdown.js") %>"
+    src: "<%= asset_path(:js, "reveal/plugins/markdown/showdown") %>"
     condition: ->
       !!document.querySelector("[data-markdown]")
   ,
-    src: "<%= asset_path(:js, "reveal/plugins/markdown/markdown.js") %>"
+    src: "<%= asset_path(:js, "reveal/plugins/markdown/markdown") %>"
     condition: ->
       !!document.querySelector("[data-markdown]")
   ,
-    src: "<%= asset_path(:js, "reveal/plugins/highlight/highlight.js") %>"
+    src: "<%= asset_path(:js, "reveal/plugins/highlight/highlight") %>"
     async: true
     callback: ->
       hljs.initHighlightingOnLoad()
   ,
-    src: "<%= asset_path(:js, "reveal/plugins/zoom-js/zoom.js") %>"
+    src: "<%= asset_path(:js, "reveal/plugins/zoom-js/zoom") %>"
     async: true
     condition: ->
       !!document.body.classList
   ,
-    src: "<%= asset_path(:js, "reveal/plugins/notes/notes.js") %>"
+    src: "<%= asset_path(:js, "reveal/plugins/notes/notes") %>"
     async: true
     condition: ->
       !!document.body.classList
 
-  # src: "<%= asset_path(:js, "reveal/plugins/remotes/remotes.js") %>"
+  # src: "<%= asset_path(:js, "reveal/plugins/remotes/remotes") %>"
   # async: true
   # condition: ->
   #   return !!document.body.classList
